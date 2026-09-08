@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Open Sans', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+
+  --color-background: #ffffff;
+  --color-foreground: #242424;
+  --color-card: #ffffff;
+  --color-card-foreground: #242424;
+  --color-primary: #2ea3f2;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #eef2f7;
+  --color-muted-foreground: #666666;
+  --color-border: #e2e2e2;
+  --color-accent: #2ea3f2;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: #242424;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*:hover::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+
+*:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
