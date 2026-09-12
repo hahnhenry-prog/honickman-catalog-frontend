@@ -9,12 +9,17 @@
   --color-foreground: #242424;
   --color-card: #ffffff;
   --color-card-foreground: #242424;
-  --color-primary: #2ea3f2;
+  --color-primary: #174a92;
   --color-primary-foreground: #ffffff;
   --color-muted: #eef2f7;
   --color-muted-foreground: #666666;
   --color-border: #e2e2e2;
-  --color-accent: #2ea3f2;
+  --color-accent: #174a92;
+}
+
+:root {
+  /* Overridden per company at runtime by useBrandTheme. */
+  --brand-primary: #174a92;
 }
 
 html,
