@@ -17,10 +17,6 @@
   --color-accent: #174a92;
 }
 
-:root {
-  /* Overridden per company at runtime by useBrandTheme. */
-  --brand-primary: #174a92;
-}
 
 html,
 body,

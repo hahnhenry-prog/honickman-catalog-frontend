@@ -34,7 +34,7 @@ function SingleSelect({ label, value, options, onChange }: {
   const active = value !== ''
   return (
     <div className="relative shrink-0 flex items-center border-b-2 transition-colors duration-200"
-      style={{ borderBottomColor: active ? 'var(--brand-primary)' : 'transparent' }}>
+      style={{ borderBottomColor: active ? 'var(--color-primary)' : 'transparent' }}>
       <span className="text-[13px] tracking-[0.08em] uppercase font-medium pointer-events-none select-none pr-1"
         style={{ color: active ? '#242424' : '#666666' }}>
         {label}
@@ -45,7 +45,7 @@ function SingleSelect({ label, value, options, onChange }: {
         {options.map(o => <option key={o} value={o}>{o}</option>)}
       </select>
       <svg width="11" height="11" viewBox="0 0 12 12" fill="none" className="pointer-events-none"
-        style={{ color: active ? 'var(--brand-primary)' : '#666666' }}>
+        style={{ color: active ? 'var(--color-primary)' : '#666666' }}>
         <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
@@ -87,13 +87,13 @@ function GroupedMultiSelect({ label, selected, groups, onChange }: {
         ref={btnRef}
         onClick={() => { if (btnRef.current) setRect(btnRef.current.getBoundingClientRect()); setOpen(v => !v) }}
         className="flex items-center gap-1 border-b-2 transition-colors duration-200"
-        style={{ borderBottomColor: active ? 'var(--brand-primary)' : 'transparent' }}
+        style={{ borderBottomColor: active ? 'var(--color-primary)' : 'transparent' }}
       >
         <span className="text-[13px] tracking-[0.08em] uppercase font-medium select-none"
           style={{ color: active ? '#242424' : '#666666' }}>
           {label}{active ? ` (${selected.length})` : ''}
         </span>
-        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ color: active ? 'var(--brand-primary)' : '#666666' }}>
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ color: active ? 'var(--color-primary)' : '#666666' }}>
           <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
@@ -114,7 +114,7 @@ function GroupedMultiSelect({ label, selected, groups, onChange }: {
                 return (
                   <label key={key} className="flex items-center gap-2.5 px-3 py-1.5 cursor-pointer hover:bg-[#f5f8ff] transition-colors duration-100">
                     <input type="checkbox" checked={selected.includes(key)} onChange={() => toggle(key)}
-                      className="accent-[var(--brand-primary)] w-3.5 h-3.5 shrink-0" />
+                      className="accent-[var(--color-primary)] w-3.5 h-3.5 shrink-0" />
                     <span className="text-[12px] text-[#242424]">{size}</span>
                   </label>
                 )
@@ -171,13 +171,13 @@ function MultiSelect({ label, selected, options, onChange }: {
         ref={btnRef}
         onClick={() => { if (btnRef.current) setRect(btnRef.current.getBoundingClientRect()); setOpen(v => !v) }}
         className="flex items-center gap-1 border-b-2 transition-colors duration-200"
-        style={{ borderBottomColor: active ? 'var(--brand-primary)' : 'transparent' }}
+        style={{ borderBottomColor: active ? 'var(--color-primary)' : 'transparent' }}
       >
         <span className="text-[13px] tracking-[0.08em] uppercase font-medium select-none"
           style={{ color: active ? '#242424' : '#666666' }}>
           {label}{active ? ` (${selected.length})` : ''}
         </span>
-        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ color: active ? 'var(--brand-primary)' : '#666666' }}>
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ color: active ? 'var(--color-primary)' : '#666666' }}>
           <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
@@ -191,7 +191,7 @@ function MultiSelect({ label, selected, options, onChange }: {
           {options.map(o => (
             <label key={o} className="flex items-center gap-2.5 px-3 py-1.5 cursor-pointer hover:bg-[#f5f8ff] transition-colors duration-100">
               <input type="checkbox" checked={selected.includes(o)} onChange={() => toggle(o)}
-                className="accent-[var(--brand-primary)] w-3.5 h-3.5 shrink-0" />
+                className="accent-[var(--color-primary)] w-3.5 h-3.5 shrink-0" />
               <span className="text-[12px] text-[#242424]">{o}</span>
             </label>
           ))}
@@ -227,7 +227,7 @@ function ProductModal({ product, onClose }: { product: CatalogProduct; onClose: 
       <div className="relative bg-white w-full max-w-[360px] shadow-2xl"
         style={{ borderRadius: '2px' }} onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
-          <span style={{ fontFamily: "'Barlow Condensed', sans-serif", color: 'var(--brand-primary)' }}
+          <span style={{ fontFamily: "'Barlow Condensed', sans-serif", color: 'var(--color-primary)' }}
             className="text-xl font-semibold tracking-[0.12em] uppercase leading-none">
             {product.brand}
           </span>
@@ -295,7 +295,7 @@ function ProductCard({ product, onClick }: { product: CatalogProduct; onClick: (
           )}
           {product.isSeasonal && (
             <span className="px-1.5 py-0.5 text-[8px] font-semibold tracking-widest uppercase rounded-sm text-white leading-none"
-              style={{ background: 'var(--brand-primary)' }}>Limited</span>
+              style={{ background: 'var(--color-primary)' }}>Limited</span>
           )}
         </div>
       )}
@@ -535,13 +535,13 @@ function CatalogContent({ company }: { company: CompanyKey }) {
           <button
             onClick={() => setTag('new', !filterNew)}
             className="shrink-0 text-[13px] tracking-[0.08em] uppercase font-medium transition-colors duration-200 border-b-2"
-            style={{ color: filterNew ? '#242424' : '#666666', borderBottomColor: filterNew ? 'var(--brand-primary)' : 'transparent' }}>
+            style={{ color: filterNew ? '#242424' : '#666666', borderBottomColor: filterNew ? 'var(--color-primary)' : 'transparent' }}>
             New
           </button>
           <button
             onClick={() => setTag('limited', !filterLimited)}
             className="shrink-0 text-[13px] tracking-[0.08em] uppercase font-medium transition-colors duration-200 border-b-2"
-            style={{ color: filterLimited ? '#242424' : '#666666', borderBottomColor: filterLimited ? 'var(--brand-primary)' : 'transparent' }}>
+            style={{ color: filterLimited ? '#242424' : '#666666', borderBottomColor: filterLimited ? 'var(--color-primary)' : 'transparent' }}>
             Limited
           </button>
           <MultiSelect
@@ -584,7 +584,7 @@ function CatalogContent({ company }: { company: CompanyKey }) {
                   ? <img src={brandLogos[brand]!} alt={brand}
                       className="w-3/4 h-3/4 object-contain transition-transform duration-200 group-hover:scale-105" />
                   : <span style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                      className="text-3xl font-semibold tracking-wide uppercase text-[#242424] group-hover:text-[var(--brand-primary)] transition-colors duration-200 select-none text-center px-4 leading-tight">
+                      className="text-3xl font-semibold tracking-wide uppercase text-[#242424] group-hover:text-[var(--color-primary)] transition-colors duration-200 select-none text-center px-4 leading-tight">
                       {brand}
                     </span>
                 }
