@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router'
 import { ThemeProvider } from '@honickman/ui'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { VALID_COMPANIES, type CompanyKey } from '../lib/supabase'
-import { COMPANY_BRANDS, DEFAULT_COMPANY, HONICKMAN, PAGE_BG, FOOTER_BG } from '../lib/brands'
+import { COMPANY_BRANDS, DEFAULT_COMPANY, HONICKMAN } from '../lib/brands'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const params = useParams<{ company?: string }>()
@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     // :root, so everything below — including the filter dropdowns and product
     // modal, which render through portals into document.body — picks them up.
     <ThemeProvider brand={brand.key}>
-      <div className="min-h-full text-[#242424]" style={{ background: PAGE_BG }}>
+      <div className="min-h-full" style={{ background: 'var(--color-background)', color: 'var(--color-foreground)' }}>
         <header className="sticky top-0 z-50" style={{ background: 'var(--color-primary)' }}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
             <Link to={showAllTo}>
@@ -37,9 +37,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <main>{children}</main>
 
-        <footer className="mt-4" style={{ background: FOOTER_BG }}>
+        <footer className="mt-4" style={{ background: 'var(--color-surface-inverse)' }}>
           <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-center">
-            <span className="text-[12px] text-white">{footerText}</span>
+            <span className="text-[12px]" style={{ color: 'var(--color-surface-inverse-foreground)' }}>{footerText}</span>
           </div>
         </footer>
       </div>

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { ThemeProvider, tokensForBrand } from '@honickman/ui'
-import { BRAND_LIST, HONICKMAN, PAGE_BG, FOOTER_BG } from '../lib/brands'
+import { BRAND_LIST, HONICKMAN } from '../lib/brands'
 
 export default function CompanyPickerPage() {
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ export default function CompanyPickerPage() {
 
   return (
     <ThemeProvider brand="honickman">
-    <div className="min-h-screen flex flex-col" style={{ background: PAGE_BG }}>
+    <div className="min-h-screen flex flex-col" style={{ background: 'var(--color-background)' }}>
       {/* Header */}
       <header style={{ background: 'var(--color-secondary)' }}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-5">
@@ -44,9 +44,9 @@ export default function CompanyPickerPage() {
       </main>
 
       {/* Footer */}
-      <footer style={{ background: FOOTER_BG }}>
+      <footer style={{ background: 'var(--color-surface-inverse)' }}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
-          <span className="text-[12px] text-white">{HONICKMAN.footerText}</span>
+          <span className="text-[12px]" style={{ color: 'var(--color-surface-inverse-foreground)' }}>{HONICKMAN.footerText}</span>
         </div>
       </footer>
     </div>

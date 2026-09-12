@@ -66,8 +66,4 @@ export const HONICKMAN = {
   favicon: '/hongrp-favicon.png',
 }
 
-/** Chrome shared by every page, independent of brand. */
-export const PAGE_BG = '#f4f6f9'
-export const FOOTER_BG = '#2e2e2e'
-
 export const DEFAULT_COMPANY: CompanyKey = 'pcny'
