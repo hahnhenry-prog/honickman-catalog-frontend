@@ -1,28 +1,19 @@
 import { useNavigate } from 'react-router'
 import { usePageMeta } from '../hooks/usePageMeta'
-import honickmanLogo from '../imports/TheHonickmanCompanies-1.svg'
-import pcnyLogo from '../imports/PCNY.webp'
-import pnbLogo from '../imports/PNB.webp'
-import cddvLogo from '../imports/CDDV.webp'
-import cdpLogo from '../imports/CDP.webp'
-
-const COMPANIES = [
-  { slug: 'pcny', logo: pcnyLogo, name: 'Pepsi-Cola Bottling Company of New York', bg: '#174a92', border: '#174a92' },
-  { slug: 'pnb',  logo: pnbLogo,  name: 'Pepsi-Cola & National Brand Beverages',   bg: '#174a92', border: '#174a92' },
-  { slug: 'cddv', logo: cddvLogo, name: 'Delaware Valley Bottling Company',         bg: '#0e4636', border: '#0e4636' },
-  { slug: 'cdp',  logo: cdpLogo,  name: 'Canada Dry Potomac Corporation',           bg: '#0e4636', border: '#0e4636' },
-]
+import { ThemeProvider, tokensForBrand } from '@honickman/ui'
+import { BRAND_LIST, HONICKMAN } from '../lib/brands'
 
 export default function CompanyPickerPage() {
   const navigate = useNavigate()
-  usePageMeta('Product Catalogs', '/hongrp-favicon.png')
+  usePageMeta('Product Catalogs', HONICKMAN.favicon)
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#f4f6f9' }}>
+    <ThemeProvider brand="honickman">
+    <div className="min-h-screen flex flex-col" style={{ background: 'var(--color-background)' }}>
       {/* Header */}
-      <header style={{ background: '#1e2d3d' }}>
+      <header style={{ background: 'var(--color-secondary)' }}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-5">
-          <img src={honickmanLogo} alt="The Honickman Companies" className="h-8 w-auto" />
+          <img src={HONICKMAN.logo} alt={HONICKMAN.name} className="h-8 w-auto" />
           <div className="w-px h-6 bg-white/20" />
           <span className="text-[12px] tracking-[0.14em] uppercase text-white/60 font-medium">
             Product Catalogs
@@ -32,7 +23,7 @@ export default function CompanyPickerPage() {
 
       {/* Picker */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-16">
-        <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+        <h1 style={{ fontFamily: "var(--font-display)" }}
           className="text-3xl font-semibold tracking-wide uppercase text-[#242424] mb-2 text-center">
           Select a Company
         </h1>
@@ -41,11 +32,11 @@ export default function CompanyPickerPage() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-2xl">
-          {COMPANIES.map(co => (
-            <button key={co.slug} onClick={() => navigate(`/${co.slug}`)}
+          {BRAND_LIST.map(brand => (
+            <button key={brand.key} onClick={() => navigate(`/${brand.key}`)}
               className="group flex items-center justify-center rounded-sm border-2 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-              style={{ background: co.bg, borderColor: co.border, aspectRatio: '3 / 1.2' }}>
-              <img src={co.logo} alt={co.name}
+              style={{ background: tokensForBrand(brand.key).primary, borderColor: tokensForBrand(brand.key).primary, aspectRatio: '3 / 1.2' }}>
+              <img src={brand.logo} alt={brand.name}
                 className="w-4/5 h-3/5 object-contain transition-transform duration-200 group-hover:scale-105" />
             </button>
           ))}
@@ -53,13 +44,12 @@ export default function CompanyPickerPage() {
       </main>
 
       {/* Footer */}
-      <footer style={{ background: '#2e2e2e' }}>
+      <footer style={{ background: 'var(--color-surface-inverse)' }}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
-          <span className="text-[12px] text-white">
-            © 2026 The Honickman Companies
-          </span>
+          <span className="text-[12px]" style={{ color: 'var(--color-surface-inverse-foreground)' }}>{HONICKMAN.footerText}</span>
         </div>
       </footer>
     </div>
+    </ThemeProvider>
   )
 }
