@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme inline {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Barlow Condensed', sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
 
-  --color-background: #ffffff;
+  --color-background: #f0eeeb;
   --color-foreground: #242424;
   --color-card: #ffffff;
   --color-card-foreground: #242424;
@@ -13,7 +13,7 @@
   --color-primary-foreground: #ffffff;
   --color-muted: #eef2f7;
   --color-muted-foreground: #666666;
-  --color-border: #e2e2e2;
+  --color-border: #e2e0dc;
   --color-accent: #174a92;
 }
 
@@ -25,7 +25,7 @@ body,
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--color-background);
   color: #242424;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

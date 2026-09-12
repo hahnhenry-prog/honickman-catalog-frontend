@@ -227,7 +227,7 @@ function ProductModal({ product, onClose }: { product: CatalogProduct; onClose: 
       <div className="relative bg-white w-full max-w-[360px] shadow-2xl"
         style={{ borderRadius: '2px' }} onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
-          <span style={{ fontFamily: "'Barlow Condensed', sans-serif", color: 'var(--color-primary)' }}
+          <span style={{ fontFamily: "var(--font-display)", color: 'var(--color-primary)' }}
             className="text-xl font-semibold tracking-[0.12em] uppercase leading-none">
             {product.brand}
           </span>
@@ -246,7 +246,7 @@ function ProductModal({ product, onClose }: { product: CatalogProduct; onClose: 
           </div>
         </div>
         <div className="px-5 pt-4 pb-2">
-          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          <h2 style={{ fontFamily: "var(--font-display)" }}
             className="text-2xl font-semibold tracking-wide uppercase text-[#242424] leading-tight">
             {product.flavor}
           </h2>
@@ -331,7 +331,7 @@ function BrandSection({ brand, products, filterPackages, onSelect, brandLogos }:
     <div>
       <div className="sticky top-[104px] z-30 bg-white border-b border-[#e2e2e2]">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 h-10 flex items-center gap-4">
-          <span style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          <span style={{ fontFamily: "var(--font-display)" }}
             className="text-xl font-semibold tracking-wide uppercase text-[#242424] leading-none">
             {brand}
           </span>
@@ -509,7 +509,7 @@ function CatalogContent({ company }: { company: CompanyKey }) {
       {!isFiltered && (
         <div className="border-b border-[#e2e2e2]">
           <div className="max-w-6xl mx-auto px-3 sm:px-6 py-8">
-            <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+            <h1 style={{ fontFamily: "var(--font-display)" }}
               className="text-4xl font-semibold tracking-wide uppercase text-[#242424] leading-none">
               Brands
             </h1>
@@ -583,7 +583,7 @@ function CatalogContent({ company }: { company: CompanyKey }) {
                 {brandLogos[brand]
                   ? <img src={brandLogos[brand]!} alt={brand}
                       className="w-3/4 h-3/4 object-contain transition-transform duration-200 group-hover:scale-105" />
-                  : <span style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                  : <span style={{ fontFamily: "var(--font-display)" }}
                       className="text-3xl font-semibold tracking-wide uppercase text-[#242424] group-hover:text-[var(--color-primary)] transition-colors duration-200 select-none text-center px-4 leading-tight">
                       {brand}
                     </span>

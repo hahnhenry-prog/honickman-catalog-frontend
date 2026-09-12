@@ -23,7 +23,7 @@ export default function CompanyPickerPage() {
 
       {/* Picker */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-16">
-        <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+        <h1 style={{ fontFamily: "var(--font-display)" }}
           className="text-3xl font-semibold tracking-wide uppercase text-[#242424] mb-2 text-center">
           Select a Company
         </h1>

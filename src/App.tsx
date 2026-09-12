@@ -29,7 +29,7 @@ function PasswordGate({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex items-center justify-center bg-[#f5f5f5]">
       <div className="bg-white border border-[#e2e2e2] p-8 w-full max-w-xs flex flex-col gap-5">
         <div className="flex flex-col gap-1">
-          <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          <h1 style={{ fontFamily: "var(--font-display)" }}
             className="text-2xl font-semibold tracking-wide uppercase text-[#242424]">
             Honickman Catalog
           </h1>
