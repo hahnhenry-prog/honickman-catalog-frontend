@@ -42,7 +42,7 @@ export const BRANDS: Record<CompanyKey, BrandConfig> = {
   cddv: {
     key: 'cddv',
     name: 'Delaware Valley Bottling Company',
-    primary: '#0e4636',
+    primary: '#144937',
     footerText: '© 2026 Delaware Valley Bottling Company',
     favicon: '/cddv-favicon.png',
     logo: cddvLogo,
@@ -50,7 +50,7 @@ export const BRANDS: Record<CompanyKey, BrandConfig> = {
   cdp: {
     key: 'cdp',
     name: 'Canada Dry Potomac Corporation',
-    primary: '#0e4636',
+    primary: '#144937',
     footerText: '© 2026 Canada Dry Potomac Corporation',
     favicon: '/cdp-favicon.png',
     logo: cdpLogo,
